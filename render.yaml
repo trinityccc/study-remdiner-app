@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: study-reminder
+    runtime: docker
+    plan: free
+    region: oregon
+    rootDir: backend
+    dockerfilePath: Dockerfile
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      # Optional: lock down CORS if you ever serve frontend separately.
+      # If you serve frontend from this backend (default), you can set this
+      # to the same Render URL after first deploy, or leave it unset.
+      - key: FRONTEND_ORIGIN
+        sync: false

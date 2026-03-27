@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Study Reminder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Nunito", "ui-sans-serif", "system-ui"],
+            },
+            colors: {
+              lavender: "#e9d5ff",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body class="font-sans text-gray-800">
+    <div class="min-h-screen flex items-center justify-center px-4">
+      <div
+        class="glass rounded-2xl p-8 w-full max-w-md shadow-sm border border-white/60 animate-fade-in-up"
+      >
+        <div class="flex justify-end mb-4">
+          <button id="themeToggle" class="theme-toggle" type="button">🌞 Light</button>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-pink-50 border border-pink-100 mb-4">
+            <div class="text-2xl">🎀</div>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-bold">Study Reminder</h1>
+          <p class="mt-2 text-sm text-gray-600">Stay on track, softly.</p>
+        </div>
+
+        <div class="mt-6">
+          <form id="loginForm" class="space-y-4">
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="w-full rounded-xl border border-white/70 bg-white/80 px-4 py-2.5 outline-none focus:ring-4 focus:ring-pink-200"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div>
+              <label for="password" class="block text-sm font-semibold mb-1">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="w-full rounded-xl border border-white/70 bg-white/80 px-4 py-2.5 outline-none focus:ring-4 focus:ring-pink-200"
+                placeholder="Your password"
+              />
+            </div>
+
+            <div id="errorBox" class="hidden text-sm text-rose-700 bg-rose-50 border border-rose-100 rounded-xl px-4 py-2"></div>
+
+            <div class="pt-2">
+              <button
+                id="loginBtn"
+                type="submit"
+                class="btn-glow w-full rounded-xl bg-pink-100 hover:bg-pink-200 border border-pink-200 py-2.5 font-semibold shadow-sm transition"
+              >
+                Login
+              </button>
+              <div id="loginSpinner" class="spinner mx-auto mt-3 hidden" aria-label="Loading"></div>
+            </div>
+          </form>
+
+          <p class="mt-5 text-sm text-center text-gray-600">
+            New here?
+            <a href="/signup.html" class="text-pink-700 font-semibold hover:underline">Create an account</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/assets/login-page.js"></script>
+  </body>
+</html>
+
